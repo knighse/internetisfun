@@ -1,0 +1,24 @@
+{
+  "name": "internetisfun",
+  "version": "1.0.0",
+  "description": "the internet is fun but dangerous",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node server.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/knighse/internetisfun.git"
+  },
+  "author": "Sam Knight, Finn Walker, Jackson Spalding",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/knighse/internetisfun/issues"
+  },
+  "homepage": "https://github.com/knighse/internetisfun#readme"
+}
