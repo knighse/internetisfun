@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css?family=Crete+Round&display=swap');
+
+body {
+	background-color: palegreen;
+}
+
+h1 {
+	font-family: 'Crete Round', serif;
+	font-size: 50px;
+	text-align: center;
+	margin: 5px;
+}
+
+h2 {
+	font-family: 'Crete Round', serif;
+	font-size: 30px;
+	margin: 5px;
+}
+
+p {
+	font-family: 'Crete Round', serif;
+	font-size: 20px;
+	flex-wrap: wrap;
+	margin: auto;
+	text-align: center;
+	width: 600px;
+}
+
+a {
+	text-decoration: none;
+}
+
+section img{
+	height: auto;
+	flex-shrink: 1;
+	width: 20%;
+	float: left;
+}
+
+section {
+	flex-direction: row;
+	justify-content: flex-start;
+	margin: 50px;
+}
+
+.question {
+	border: 3px solid red;
+	width: 70%;
+	float: right;
+	margin: 20px;
+	padding: 15px;
+}
+
+.options {
+	justify-content: center;
+	border: 3px solid red;
+}
+
+.blue {
+	-webkit-transform:rotate(7deg);
+	-moz-transform:rotate(7deg);
+	-ms-transform:rotate(7deg);
+	-o-transform:rotate(7deg);
+	transform:rotate(7deg);
+}
+
+.green {
+	-webkit-transform:rotate(-10deg);
+	-moz-transform:rotate(-10deg);
+	-ms-transform:rotate(-10deg);
+	-o-transform:rotate(-10deg)
+	transform:rotate(-10deg);
+}
+
+.purple {
+	-webkit-transform:rotate(30deg);
+	-moz-transform:rotate(30deg);
+	-ms-transform:rotate(30deg);
+	-o-transform:rotate(30deg);
+	transform:rotate(30deg);
+}
+
+.red {
+	-webkit-transform:rotate(-25deg);
+	-moz-transform:rotate(-25deg);
+	-ms-transform:rotate(-25deg);
+	-o-transform:rotate(-25deg);
+	transform:rotate(-25deg);
+}
