@@ -32,3 +32,7 @@ app.get('*', function (req, res) {
         res.status(404).end('Not found');
     });
 });
+
+app.listen(3000, function () {
+    console.log('Listening on http://localhost:3000/');
+});
