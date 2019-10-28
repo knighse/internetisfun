@@ -32,28 +32,40 @@ a {
 
 section img{
 	height: auto;
-	flex-shrink: 1;
-	width: 20%;
+	max-height: 250px;
+	max-width: 20%;
 	float: left;
 }
 
 section {
 	flex-direction: row;
-	justify-content: flex-start;
+	align-items: center;
 	margin: 50px;
+	height: 300px;
 }
 
 .question {
-	border: 3px solid red;
 	width: 70%;
 	float: right;
 	margin: 20px;
 	padding: 15px;
+	background-color: #59ba59;
 }
 
-.options {
-	justify-content: center;
-	border: 3px solid red;
+.options div {
+	display: flex;
+	justify-content: space-around;
+
+}
+
+[type="submit"] {
+	size: 30px;
+	padding: 7px;
+	background-color: #59ba59;
+	font-size: 30px;
+	font-family: 'Crete Round', serif;
+	font-weight: bold;
+	text-align: center;
 }
 
 .blue {
