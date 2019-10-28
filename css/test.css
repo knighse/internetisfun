@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Crete+Round&display=swap');
 
 body {
-	background-color: aliceblue;
+	background-color: #96E5FF;
 }
 
 h1 {
@@ -50,7 +50,7 @@ section {
 	float: right;
 	margin: 20px;
 	padding: 15px;
-	background-color: skyblue;
+	background-color: lightblue;
 }
 
 .options {
@@ -66,13 +66,13 @@ section {
 	font-weight: bold;
 	text-align: center;
 	border-radius: 0px;
-	border: 2px solid navy;
+	border: 2px solid #3CA4C6;
 	background-color: skyblue;
 }
 
 [type="text"] {
-	background-color: #a7f1a7;
-	border: 2px solid #81ca81;
+	border: 2px solid #3CA4C6;
+	background-color: skyblue;
 	padding: 5px;
 	font-size: 100%;
 	font-family: 'Crete Round', serif;
