@@ -74,16 +74,23 @@ app.get('*', function (req, res) {
             let flagged = false;
             if (!(query.id == null || query.teacher == null)) {
                 if (query.id == "" || query.teacher == "") {
-                    res.write("Missing student ID or teacher name!");
+                    res.write("Missing student ID or teacher code!");
                     res.end();
                     flagged = true;
-                }
-                if (!(query.question1 && query.question2 && query.question3 && query.question4 && query.question5)) {
+                } else if (!query.id.match(/^-{0,1}\d+$/) || !query.teacher.match(/^-{0,1}\d+$/)) {
+                    res.write("Student ID or teacher code is not a number!");
+                    res.end();
+                    flagged = true;
+                } else if (!(query.question1.slice(7).match(/^-{0,1}\d+$/) || query.question2.slice(7).match(/^-{0,1}\d+$/) || query.question3.slice(7).match(/^-{0,1}\d+$/) || query.question4.slice(7).match(/^-{0,1}\d+$/) || query.question5.slice(7).match(/^-{0,1}\d+$/))) {
+                    res.write("You modified the form response and the answers were invalid!");
+                    res.write("Your responses: " + query.question1.slice(7) + query.question2.slice(7) + query.question3.slice(7) + query.question4.slice(7) + query.question5.slice(7));
+                    res.end();
+                    flagged = true;
+                } else if (!(query.question1 && query.question2 && query.question3 && query.question4 && query.question5)) {
                     res.write("Hey! Fill out the entire form!");
                     res.end();
                     flagged = true;
-                }
-                if (!flagged) {
+                } else {
                     let temp = {};
 
                     temp.teacher = query.teacher;
@@ -95,6 +102,10 @@ app.get('*', function (req, res) {
                     temp.q5 = query.question5.slice(7);
 
                     information.push(temp);
+                    res.set('Content-Type', "text/html");
+                    res.write("<script>window.location.replace('http://osa-quiz.azurewebsites.net/finished.html');</script>");
+                    res.end();
+                    flagged = true;
                 }
             }
             if (!flagged) {
