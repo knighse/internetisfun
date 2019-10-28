@@ -30,17 +30,17 @@ a {
 	text-decoration: none;
 }
 
-section img{
+section img {
 	height: auto;
 	max-height: 250px;
 	max-width: 20%;
-	float: left;
 }
 
 section {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
+	justify-content: space-between;
 	margin: 50px;
 	height: 300px;
 }
@@ -66,6 +66,22 @@ section {
 	font-family: 'Crete Round', serif;
 	font-weight: bold;
 	text-align: center;
+}
+
+[type="text"] {
+	background-color: #a7f1a7;
+	border: 2px solid #81ca81;
+	padding: 5px;
+	font-size: 100%;
+	font-family: 'Crete Round', serif;
+	margin-left: 100px;
+	margin-bottom: 10px;
+	margin-top: 10px;
+}
+
+p.textleft {
+	text-align: left;
+	margin-left: 75px;
 }
 
 .blue {
@@ -98,4 +114,12 @@ section {
 	-ms-transform:rotate(-25deg);
 	-o-transform:rotate(-25deg);
 	transform:rotate(-25deg);
+}
+
+.yellow {
+	-webkit-transform:rotate(-13deg);
+	-moz-transform:rotate(-13deg);
+	-ms-transform:rotate(-13deg);
+	-o-transform:rotate(-13deg);
+	transform:rotate(-13deg);
 }
