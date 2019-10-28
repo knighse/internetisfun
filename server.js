@@ -74,8 +74,23 @@ app.get('*', function (req, res) {
             res.end();
         } else {
             let flagged = false;
-            if (!(query.id == "" || query.id == null || query.teacher == "" || query.teacher == null) && !(ips.includes(req.ip))) {
-                if (query.question1 && query.question2 && query.question3 && query.question4 && query.question5) {
+            if () {
+                if (query.id == "" || query.teacher == "") {
+                    res.write("Missing student ID or teacher name!");
+                    res.end();
+                    flagged = true;
+                }
+                if (ips.includes(req.ip)) {
+                    res.write("you have submitted twice!");
+                    res.end();
+                    flagged = true;
+                }
+                if (!(query.question1 && query.question2 && query.question3 && query.question4 && query.question5)) {
+                    res.write("Hey! Fill out the entire form!");
+                    res.end();
+                    flagged = true;
+                }
+                if (!flagged) {
                     let temp = {};
 
                     temp.teacher = query.teacher;
@@ -88,16 +103,7 @@ app.get('*', function (req, res) {
 
                     ips.push(req.ip);
                     information.push(temp);
-                } else {
-                    res.write("Hey! Fill out the entire form!");
-                    res.end();
-                    flagged = true;
                 }
-            }
-            if (query.id == "" || query.teacher == "" || ips.includes(req.ip)) {
-                res.write("Missing student ID or you have submitted twice!");
-                res.end();
-                flagged = true;
             }
             if (!flagged) {
                 var file = path.join(dir, req.path.replace(/\/$/, '/index.html'));
