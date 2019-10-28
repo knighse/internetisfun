@@ -6,7 +6,6 @@ const querystring = require('querystring');
 const url = require('url');
 
 var information = [];
-var ips = [];
 
 var dir = __dirname;
 
@@ -53,7 +52,6 @@ app.get('*', function (req, res) {
                         }
                         break;
                     case "cleardata":
-                        ips = [];
                         for (let i = 0; i < information.length; i++) {
                             if (information[i].teacher == teachercode) {
                                 information[i] = {};
@@ -80,11 +78,6 @@ app.get('*', function (req, res) {
                     res.end();
                     flagged = true;
                 }
-                if (ips.includes(req.ip)) {
-                    res.write("you have submitted twice!");
-                    res.end();
-                    flagged = true;
-                }
                 if (!(query.question1 && query.question2 && query.question3 && query.question4 && query.question5)) {
                     res.write("Hey! Fill out the entire form!");
                     res.end();
@@ -101,7 +94,6 @@ app.get('*', function (req, res) {
                     temp.q4 = query.question4.slice(7);
                     temp.q5 = query.question5.slice(7);
 
-                    ips.push(req.ip);
                     information.push(temp);
                 }
             }
