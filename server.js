@@ -93,7 +93,8 @@ app.get('*', function (req, res) {
                     res.end();
                     flagged = true;
                 }
-            } else {
+            }
+            if (query.id == "" || query.teacher == "" || ips.includes(req.ip)) {
                 res.write("Missing student ID or you have submitted twice!");
                 res.end();
                 flagged = true;
