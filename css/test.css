@@ -87,30 +87,6 @@ p.textleft {
 }
 
 .blue {
-	-webkit-transform:rotate(7deg);
-	-moz-transform:rotate(7deg);
-	-ms-transform:rotate(7deg);
-	-o-transform:rotate(7deg);
-	transform:rotate(7deg);
-}
-
-.green {
-	-webkit-transform:rotate(-10deg);
-	-moz-transform:rotate(-10deg);
-	-ms-transform:rotate(-10deg);
-	-o-transform:rotate(-10deg)
-	transform:rotate(-10deg);
-}
-
-.purple {
-	-webkit-transform:rotate(30deg);
-	-moz-transform:rotate(30deg);
-	-ms-transform:rotate(30deg);
-	-o-transform:rotate(30deg);
-	transform:rotate(30deg);
-}
-
-.red {
 	-webkit-transform:rotate(-25deg);
 	-moz-transform:rotate(-25deg);
 	-ms-transform:rotate(-25deg);
@@ -118,10 +94,34 @@ p.textleft {
 	transform:rotate(-25deg);
 }
 
+.green {
+	-webkit-transform:rotate(30deg);
+	-moz-transform:rotate(30deg);
+	-ms-transform:rotate(30deg);
+	-o-transform:rotate(30deg)
+	transform:rotate(30deg);
+}
+
+.purple {
+	-webkit-transform:rotate(13deg);
+	-moz-transform:rotate(13deg);
+	-ms-transform:rotate(13deg);
+	-o-transform:rotate(13deg);
+	transform:rotate(13deg);
+}
+
+.red {
+	-webkit-transform:rotate(7deg);
+	-moz-transform:rotate(7deg);
+	-ms-transform:rotate(7deg);
+	-o-transform:rotate(7deg);
+	transform:rotate(7deg);
+}
+
 .yellow {
-	-webkit-transform:rotate(-13deg);
-	-moz-transform:rotate(-13deg);
-	-ms-transform:rotate(-13deg);
-	-o-transform:rotate(-13deg);
-	transform:rotate(-13deg);
+	-webkit-transform:rotate(-10deg);
+	-moz-transform:rotate(-10deg);
+	-ms-transform:rotate(-10deg);
+	-o-transform:rotate(-10deg);
+	transform:rotate(-10deg);
 }
