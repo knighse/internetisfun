@@ -34,10 +34,6 @@ app.get('*', function (req, res) {
                 switch (url.split("/")[3]) {
                     default: 
                         res.write("Hmm. Are you looking for something?\n");
-                        res.write("Your teachercode was: " + teachercode + "\n");
-                        res.write("Your raw URL was: " + req.url + "\n");
-                        res.write("Your (cleaned) URL was: " + url + "\n");
-                        res.write("Your query object was: " + JSON.stringify(query) + "\n");
                         break;
                     case "view":
                         for (let i = 0; i < information.length; i++) {
@@ -83,7 +79,6 @@ app.get('*', function (req, res) {
                     flagged = true;
                 } else if (!(query.question1.slice(7).match(/^-{0,1}\d+$/) || query.question2.slice(7).match(/^-{0,1}\d+$/) || query.question3.slice(7).match(/^-{0,1}\d+$/) || query.question4.slice(7).match(/^-{0,1}\d+$/) || query.question5.slice(7).match(/^-{0,1}\d+$/))) {
                     res.write("You modified the form response and the answers were invalid!");
-                    res.write("Your responses: " + query.question1.slice(7) + query.question2.slice(7) + query.question3.slice(7) + query.question4.slice(7) + query.question5.slice(7));
                     res.end();
                     flagged = true;
                 } else if (!(query.question1 && query.question2 && query.question3 && query.question4 && query.question5)) {
