@@ -74,7 +74,7 @@ app.get('*', function (req, res) {
             res.end();
         } else {
             let flagged = false;
-            if () {
+            if (!(query.id == null || query.teacher == null)) {
                 if (query.id == "" || query.teacher == "") {
                     res.write("Missing student ID or teacher name!");
                     res.end();
