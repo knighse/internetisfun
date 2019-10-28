@@ -38,6 +38,7 @@ section img{
 }
 
 section {
+	display: flex;
 	flex-direction: row;
 	align-items: center;
 	margin: 50px;
@@ -52,10 +53,9 @@ section {
 	background-color: #59ba59;
 }
 
-.options div {
+.options {
 	display: flex;
 	justify-content: space-around;
-
 }
 
 [type="submit"] {
