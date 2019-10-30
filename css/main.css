@@ -19,14 +19,15 @@ p {
 }
 
 button {
-	size:30px;
+	size: 30px;
 	padding: 7px;
-	background-color: #4c72ad;
 	font-size: 30px;
-	text-align: center;
-	font-weight: bold;
 	font-family: 'Crete Round', serif;
-	margin: 30px;
+	font-weight: bold;
+	text-align: center;
+	border-radius: 0px;
+	border: 2px solid #3CA4C6;
+	background-color: skyblue;
 }
 
 h1 {
