@@ -89,7 +89,7 @@ app.get('*', function (req, res) {
                     let temp = {};
 
                     temp.teacher = query.teacher;
-                    temp.name = query.name;
+                    temp.name = query.name.replace(/[^a-zA-Z0-9]/g,'');;
                     temp.q1 = query.question1.slice(7);
                     temp.q2 = query.question2.slice(7);
                     temp.q3 = query.question3.slice(7);
