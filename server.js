@@ -70,19 +70,23 @@ app.get('*', function (req, res) {
             let flagged = false;
             if (!(query.name == null || query.teacher == null)) {
                 if (query.name == "" || query.teacher == "") {
-                    res.write("Missing student name or teacher code!");
+                    res.set('Content-Type', "text/html");
+                    res.write("<script>alert('Teacher code and name need to be filled out.');window.location.replace('http://osa-quiz.azurewebsites.net/test.html');</script>");
                     res.end();
                     flagged = true;
                 } else if (!query.teacher.match(/^-{0,1}\d+$/)) {
-                    res.write("Teacher code is not a number!");
+                    res.set('Content-Type', "text/html");
+                    res.write("<script>alert('Teacher code must be a number');window.location.replace('http://osa-quiz.azurewebsites.net/test.html');</script>");
                     res.end();
                     flagged = true;
                 } else if (!(query.question1.slice(7).match(/^-{0,1}\d+$/) || query.question2.slice(7).match(/^-{0,1}\d+$/) || query.question3.slice(7).match(/^-{0,1}\d+$/) || query.question4.slice(7).match(/^-{0,1}\d+$/) || query.question5.slice(7).match(/^-{0,1}\d+$/))) {
-                    res.write("You modified the form response and the answers were invalid!");
+                    res.set('Content-Type', "text/html");
+                    res.write("<script>alert('Hey! Stop modifying your request!');window.location.replace('http://osa-quiz.azurewebsites.net/test.html');</script>");
                     res.end();
                     flagged = true;
                 } else if (!(query.question1 && query.question2 && query.question3 && query.question4 && query.question5)) {
-                    res.write("Hey! Fill out the entire form!");
+                    res.set('Content-Type', "text/html");
+                    res.write("<script>alert('Questions incomplete. Please fill out the whole form.');window.location.replace('http://osa-quiz.azurewebsites.net/test.html');</script>");
                     res.end();
                     flagged = true;
                 } else {
