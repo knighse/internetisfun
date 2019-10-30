@@ -38,7 +38,7 @@ app.get('*', function (req, res) {
                     case "view":
                         for (let i = 0; i < information.length; i++) {
                             if (information[i].teacher == teachercode) {
-                                res.write("-- Student id: " + information[i].id + "\n");
+                                res.write("-- Student name: " + information[i].name + "\n");
                                 res.write("q1: " + information[i].q1 + "\n");
                                 res.write("q2: " + information[i].q2 + "\n");
                                 res.write("q3: " + information[i].q3 + "\n");
@@ -68,13 +68,13 @@ app.get('*', function (req, res) {
             res.end();
         } else {
             let flagged = false;
-            if (!(query.id == null || query.teacher == null)) {
-                if (query.id == "" || query.teacher == "") {
-                    res.write("Missing student ID or teacher code!");
+            if (!(query.name == null || query.teacher == null)) {
+                if (query.name == "" || query.teacher == "") {
+                    res.write("Missing student name or teacher code!");
                     res.end();
                     flagged = true;
-                } else if (!query.id.match(/^-{0,1}\d+$/) || !query.teacher.match(/^-{0,1}\d+$/)) {
-                    res.write("Student ID or teacher code is not a number!");
+                } else if (!query.teacher.match(/^-{0,1}\d+$/)) {
+                    res.write("Teacher code is not a number!");
                     res.end();
                     flagged = true;
                 } else if (!(query.question1.slice(7).match(/^-{0,1}\d+$/) || query.question2.slice(7).match(/^-{0,1}\d+$/) || query.question3.slice(7).match(/^-{0,1}\d+$/) || query.question4.slice(7).match(/^-{0,1}\d+$/) || query.question5.slice(7).match(/^-{0,1}\d+$/))) {
@@ -89,7 +89,7 @@ app.get('*', function (req, res) {
                     let temp = {};
 
                     temp.teacher = query.teacher;
-                    temp.id = query.id;
+                    temp.name = query.name;
                     temp.q1 = query.question1.slice(7);
                     temp.q2 = query.question2.slice(7);
                     temp.q3 = query.question3.slice(7);
