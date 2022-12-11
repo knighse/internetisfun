@@ -4,7 +4,7 @@
   "description": "the internet is fun but dangerous",
   "main": "server.js",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "querystring": "^0.2.0",
     "url": "^0.11.0",
     "xss-filters": "^1.2.7"
